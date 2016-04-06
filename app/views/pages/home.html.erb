@@ -1,15 +1,19 @@
 <div class = "jumbotron vertical-center">
 	<div class = "container text-center">
 	
-	<h1>Welcome to the app!</h1>
-	<% if user_signed_in? %>
-		<p> Welcome to Pinteresting! </p>
 	
+	<% if user_signed_in? %>
+	<p>Find your area on the map!</p>	
+			
 	<% else %>
+	<h1>Welcome to the app!</h1>
 		<p>
 		<%= link_to "Sign up", new_user_registration_path, class: "btn btn-default btn-lg" %>
 		<%= link_to "Log in", new_user_session_path, class: "btn btn-primary btn-lg" %>
 		</p>
 	<% end %>
 	</div>
+</div>
+<div>
+<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d96536.69821552152!2d-73.29422665!3d40.8768815!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1459699586002" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 </div>
