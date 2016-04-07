@@ -4,13 +4,11 @@ class PinsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   # GET /pins
-  # GET /pins.json
   def index
     @pins = Pin.all
   end
 
   # GET /pins/1
-  # GET /pins/1.json
   def show
   end
 
@@ -24,7 +22,6 @@ class PinsController < ApplicationController
   end
 
   # POST /pins
-  # POST /pins.json
   def create
     @pin = current_user.pins.build(pin_params)
 
@@ -40,7 +37,6 @@ class PinsController < ApplicationController
   end
 
   # PATCH/PUT /pins/1
-  # PATCH/PUT /pins/1.json
   def update
     
       if @pin.update(pin_params)
@@ -52,7 +48,6 @@ class PinsController < ApplicationController
   end
 
   # DELETE /pins/1
-  # DELETE /pins/1.json
   def destroy
     @pin.destroy
    
@@ -75,4 +70,4 @@ class PinsController < ApplicationController
     def pin_params
       params.require(:pin).permit(:description, :image)
     end
-end
+  end
